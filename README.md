@@ -33,13 +33,13 @@ Users can enter a search query and the app will fetch and display matching photo
 **- usehooks-ts**: a collection of TypeScript utility hooks
 **- Vite** - build tool
 **- VS Code** - code editor and terminal
-**- Github** - code repository
-**- Vercel** - web deployment
+**- Github** - code repository and documentation
+**- Vercel** - live web deployment
 
 ## Installation
-### Demo
-Please visit the following link to view this application online:
-- To be provided
+### Production
+Please visit the following link to view the live version of this application online:
+- [Splashify](https://splashify.vercel.app/)
 
 ### Local
 To run the application locally, follow these steps:
