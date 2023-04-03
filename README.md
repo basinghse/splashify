@@ -41,6 +41,9 @@ Users can enter a search query and the app will fetch and display matching photo
 Please visit the following link to view the live version of this application online:
 - [Splashify](https://splashify.vercel.app/)
 
+Please note: API requests are limited to 50 per hour from Unsplash while application is in the process of being approved for Production.
+- Due to this, images may not appear if too many requests are made. Please be patient as the application is approved.
+
 ### Local
 To run the application locally, follow these steps:
 
