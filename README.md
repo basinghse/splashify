@@ -104,6 +104,6 @@ That's it! You should now be able to use the Splashify app locally.
 - [x] **Challenge:** Displaying trending words from the Unsplash API.
 - **Solution:** Fetched the trending topics using the Unsplash API and displayed them as clickable buttons that update the search query.
 
-- [] **Challenge:** When selecting the 'popular searches' buttons - sometimes it won't load the selected search
+- [ ] **Challenge:** When selecting the 'popular searches' buttons - sometimes it won't load the selected search
 - This appears to be due to the API fetching limitation. Once it hits the limit, the site may fluctuate between images it has already published, as it cannot fetch any new images.
-- It also appears that if the popular searches are clicked one after another, sometimes the wrong images will appear for the wrong search, I believe this will be resolved with a higher limit on API fetching.
+- It also appears that if the popular searches are clicked one after another, sometimes the wrong images will appear for the wrong search. This can be resolved if the user continues to change between the buttons i.e. selecting Animals and Technology back and forth until they display the correct images. I believe this will be resolved with a higher limit on API fetching.
