@@ -58,8 +58,6 @@ const Header: FC<HeaderProps> = ({
     }
   };
 
-  console.log(trendingWords, "tren");
-
   // This useEffect hook runs the fetchLogo and fetchTrendingWords functions on component mount.
 
   useEffect(() => {
@@ -76,49 +74,76 @@ const Header: FC<HeaderProps> = ({
   // This is the JSX that will be rendered to the DOM.
 
   return (
-    <div className="w-full sticky top-0 flex justify-between items-center p-4 z-[100] bg-white">
-      <div className="flex justify-center items-center">
+    <div className="w-full sticky top-0 flex  justify-center items-center p-4 z-[100] bg-white">
+      <div className="flex justify-center items-center mb-4">
         <div
           className="logo w-10 h-10 bg-cover bg-center bg-no-repeat rounded-full mr-2"
           style={{ backgroundImage: `url(${logoUrl})` }}
         />
-
         <h1 className="text-2xl font-bold">Splashify</h1>
       </div>
-      <div className="flex justify-center absolute left-[36%] z-50">
-        <div className="relative">
+      <div className="flex justify-center items-center w-full mr-32">
+        <div className="flex flex-1 justify-end items-center mx-2 ml-4 gap-10 2xl:gap-20">
+          <button
+            className="text-blue-600 font-medium py-2 rounded inline-flex items-center"
+            onClick={() => setSearchQuery("Nature")}
+          >
+            <span>Nature</span>
+          </button>
+          <button
+            className="text-blue-600 font-medium py-2 rounded inline-flex items-center"
+            onClick={() => setSearchQuery("Architecture")}
+          >
+            <span>Architecture</span>
+          </button>
+          <button
+            className="text-blue-600 font-medium py-2 rounded inline-flex items-center"
+            onClick={() => setSearchQuery("Travel")}
+          >
+            <span>Travel</span>
+          </button>
+        </div>
+        <div className="relative w-full max-w-md mx-8">
           <FaSearch className="text-gray-400 absolute top-1/2 left-2 transform -translate-y-1/2 text-xl" />
           <input
             type="text"
             placeholder="Search high resolution images"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="
-        w-[500px] h-[50px] rounded-xl px-10
-        outline-none border-black border-2"
+            className="w-full h-[50px] rounded-xl px-10 outline-none border-black border-2"
           />
           <RxCross2
             className="text-gray-400 absolute top-1/2 right-2 transform -translate-y-1/2 text-xl cursor-pointer"
             onClick={() => setSearchQuery("")}
           />
         </div>
-        {/* //! implement trending words here */}
-        <div className="ml-4">
-          {trendingWords?.map((word, index) => (
-            <button
-              key={index}
-              onClick={() => handleTrendingWordClick(word)}
-              className="text-black mx-1 hover:text-black transition-colors"
-            >
-              {word}
-            </button>
-          ))}
+        <div className="flex flex-1 justify-start items-center gap-10 2xl:gap-20 mx-2 mr-4">
+          <button
+            className="text-blue-600 font-medium py-2 rounded inline-flex items-center"
+            onClick={() => setSearchQuery("Food")}
+          >
+            <span>Food</span>
+          </button>
+          <button
+            className="text-blue-600 font-medium py-2 rounded inline-flex items-center"
+            onClick={() => setSearchQuery("Animals")}
+          >
+            <span>Animals</span>
+          </button>
+          <button
+            className="text-blue-600 font-medium py-2 rounded inline-flex items-center"
+            onClick={() => setSearchQuery("Technology")}
+          >
+            <span>Technology</span>
+          </button>
         </div>
       </div>
-
-      <div className="flex">
+      <div className="flex absolute right-8">
         {searchQuery === "" && (
-          <Dropdown setInitialSearchQuery={setInitialSearchQuery} />
+          <Dropdown
+            setInitialSearchQuery={setInitialSearchQuery}
+            searchQuery={searchQuery}
+          />
         )}
       </div>
     </div>

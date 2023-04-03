@@ -34,8 +34,7 @@ type SearchPhotosResponse = {
 
 const App: FC = () => {
   const [data, setPhotosResponse] = useState<SearchPhotosResponse | null>(null); // Setting the state for SearchPhotosResponse
-  const [initialSearchQuery, setInitialSearchQuery] =
-    useState<string>("trending"); // Setting the state for initial search query
+  const [initialSearchQuery, setInitialSearchQuery] = useState<string>(""); // Setting the state for initial search query
   const [searchQuery, setSearchQuery] = useState<string>(""); // Setting the state for search query
   const debouncedSearchTerm = useDebounce(searchQuery, 1000); // Using useDebounce hook to debounce the search query
   const [showModal, setShowModal] = useState<boolean>(false); // Setting the state for showing/hiding the modal
@@ -93,6 +92,7 @@ const App: FC = () => {
           setClearResults(false);
         } else {
           // Otherwise, append the new results to the existing ones
+          console.log("the images were appended");
 
           setPhotosResponse((prevState) => {
             const updatedResults = prevState
@@ -115,16 +115,9 @@ const App: FC = () => {
   }, [debouncedSearchTerm, initialSearchQuery, page]);
 
   // Effect to reset the search results and page number when the search query changes
-
   useEffect(() => {
-    if (searchQuery !== "") {
-      setClearResults(true);
-      setPage(1);
-    } else {
-      setInitialSearchQuery("trending");
-      setClearResults(true);
-      setPage(1);
-    }
+    setClearResults(true);
+    setPage(1);
   }, [searchQuery, initialSearchQuery]);
 
   //Load more images as the user reach the end of the page
@@ -159,7 +152,7 @@ const App: FC = () => {
         searchQuery={searchQuery}
         setInitialSearchQuery={setInitialSearchQuery}
       />
-      <section className="home">
+      <section className="home p-6">
         <Masonry
           breakpointCols={6}
           className="my-masonry-grid"

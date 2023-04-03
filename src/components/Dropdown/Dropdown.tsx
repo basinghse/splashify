@@ -11,18 +11,28 @@ import Select from "react-select";
 
 interface DropdownProps {
   setInitialSearchQuery: Dispatch<SetStateAction<string>>;
+  searchQuery: string;
 }
 
 // These are the options that will be displayed in the dropdown.
 
 const options = [
-  { value: "trending", label: "Trending" },
-  { value: "new", label: "New" },
+  { value: "trending&order_by=popular", label: "Trending" },
+  { value: "new&sort=latest", label: "New" },
 ];
 
 // This is the actual Dropdown component.
 
-const Dropdown: FC<DropdownProps> = ({ setInitialSearchQuery }) => {
+const Dropdown: FC<DropdownProps> = ({
+  setInitialSearchQuery,
+  searchQuery,
+}) => {
+  useEffect(() => {
+    if (searchQuery === "") {
+      setInitialSearchQuery(options[0].value);
+    }
+  }, [searchQuery, setInitialSearchQuery]);
+
   // This is the state for the currently selected option in the dropdown.
   const [selected, setSelected] = useState(options[0]);
 
