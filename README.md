@@ -64,9 +64,9 @@ To run the application locally, follow these steps:
     
 2.  Confirm that you have Git installed by typing `git --version`. If you don't have Git installed, download and install it from [here](https://git-scm.com/downloads).
     
-3.  Clone the repository using Git: `git clone https://github.com/basinghse/splashify.git (optional-new-name)`
+3.  Clone the repository using Git: `git clone https://github.com/basinghse/splashify.git (can enter optional-new-name)`
     
-4.  Navigate to the project directory: `cd splashify`
+4.  Navigate to the project directory: `cd (splashify or optional-new-name)`
     
 5.  Install dependencies: `npm install`
     
@@ -75,6 +75,7 @@ To run the application locally, follow these steps:
 7.  Run the application: `npm run dev`
     
     This will start a local development server at your local host e.g. `http://localhost:5173/` Follow the link provided (i.e. `ctrl + click`)
+	In a rare situation where there is an error in the code - there may be dependencies missing in the installation. In this case, you may need to reinstall the dependencies, or refer to the error message.
 
 That's it! You should now be able to use the Splashify app locally.
 
@@ -106,4 +107,4 @@ That's it! You should now be able to use the Splashify app locally.
 
 - [ ] **Challenge:** When selecting the 'popular searches' buttons - sometimes it won't load the selected search
 - This appears to be due to the API fetching limitation. Once it hits the limit, the site may fluctuate between images it has already published, as it cannot fetch any new images.
-- It also appears that if the popular searches are clicked one after another, sometimes the wrong images will appear for the wrong search. This can be resolved if the user continues to change between the buttons i.e. selecting Animals and Technology back and forth until they display the correct images. I believe this will be resolved with a higher limit on API fetching.
+- It also appears that if the popular searches are clicked one after another, sometimes the second button will not change the images, and due to that, the next button selections will produce the images for the previous search e.g. Nature selection - successful; Architecture selection - unsuccessful; Travel selection - will now show Architecture images; Food selection - will now display Travel images; etc. The **solution** to this is to keep interchanging between the different buttons until the images correspond with the correct buttons. I believe this will be resolved with a higher limit on API fetching through Unsplash API Production account.
