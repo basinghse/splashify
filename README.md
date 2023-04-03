@@ -1,7 +1,6 @@
 ![Splashify Demo](./images/splashify-demo.png)
 
 # Splashify
----
 Splashify is a React + TypeScript + Vite application that allows users to search and browse high-resolution images using the Unsplash api. It provides a user-friendly interface and useful features such as image filtering and sorting.
 
 Users can enter a search query and the app will fetch and display matching photos. The app also supports infinite scrolling, where more photos are loaded as the user scrolls down the page.
