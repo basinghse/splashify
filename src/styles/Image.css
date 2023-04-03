@@ -1,0 +1,41 @@
+.imageItem {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.imageItem .info {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.imageItem .info .name {
+  line-height: 22px;
+  color: white;
+  font-weight: 400;
+  position: absolute;
+  font-size: 0.8rem;
+  top: 0.7rem;
+  left: 0.7rem;
+}
+.imageItem .info .btn {
+  position: absolute;
+  bottom: 0.7rem;
+  right: 0.7rem;
+}
+.imageItem .info .likes {
+  line-height: 22px;
+  color: white;
+  font-weight: 700;
+  position: absolute;
+  font-size: 16px;
+  bottom: 0.7rem;
+  left: 0.7rem;
+}
+
+.imageItem:hover .info {
+  display: flex;
+}
