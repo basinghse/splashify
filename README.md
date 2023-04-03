@@ -7,7 +7,6 @@ Users can enter a search query and the app will fetch and display matching photo
 
 
 ## Table of Contents
----
 - [Features](#features)
 - [Technologies](#technologies)
 - [Features](#features)
@@ -19,7 +18,6 @@ Users can enter a search query and the app will fetch and display matching photo
 - [Challenges](#challenges)
 
 ## Features
----
 - Search and browse high-resolution images from Unsplash.
 - Find trending and new images from Unsplash.
 - View image author, number of likes and download image upon hover
@@ -28,7 +26,6 @@ Users can enter a search query and the app will fetch and display matching photo
 - Infinite scrolling for seamless browsing experience.
 
 ## Technologies
----
 **- React** - a JavaScript library for building user interfaces
 **- TypeScript** - primary language for programming
 **- axios**: a promise-based HTTP client for making API requests
@@ -40,7 +37,6 @@ Users can enter a search query and the app will fetch and display matching photo
 **- Vercel** - web deployment
 
 ## Installation
----
 ### Demo
 Please visit the following link to view this application online:
 - To be provided
