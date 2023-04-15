@@ -1,4 +1,4 @@
-![Splashify Demo](./images/splashify-preview.png)
+![Splashify Preview](./images/splashify-preview.png)
 
 # Splashify
 Splashify is a React + TypeScript + Vite application that allows users to search and browse high-resolution images using the Unsplash api. It provides a user-friendly interface and useful features such as image filtering and sorting.
@@ -9,7 +9,6 @@ Users can enter a search query and the app will fetch and display matching photo
 ## Table of Contents
 - [Features](#features)
 - [Technologies](#technologies)
-- [Features](#features)
 - [Installation](#installation)
 	- [Production](#production)
 	- [Local](#local)
@@ -52,25 +51,25 @@ Please note: API requests are limited to 50 per hour from Unsplash while applica
 
 ### Local
 
-**Pre-requisites:**
-- Node.js
-- npm
-- Git
-- Unsplash API developer key
+**Pre-requisites:** 
+- Node.js - [download](https://nodejs.org/en/download)
+- Git - [download](https://git-scm.com/downloads)
+- npm - instructions below
+- Unsplash API developer key - instructions below
 
 To run the application locally, follow these steps:
 
 1.  Open your terminal. If you're using VS Code (recommended), you can open the integrated terminal by pressing Ctrl + '
     
-2.  Confirm that you have Git installed by typing `git --version`. If you don't have Git installed, download and install it from [here](https://git-scm.com/downloads).
-    
-3.  Clone the repository using Git: `git clone https://github.com/basinghse/splashify.git (can enter optional-new-name)`
+2.  Confirm that you have Git installed by typing `git --version` in your terminal. If you receive an error or no output, Git is likely not installed, please download from the link above
+
+3.  Clone the Splashify repository using Git: `git clone https://github.com/basinghse/splashify.git (can enter optional-new-name)`
     
 4.  Navigate to the project directory: `cd (splashify or optional-new-name)`
     
 5.  Install dependencies: `npm install`
     
-6.  Replace the `client_id` value in the `config.ts` file with your Unsplash Access Key. You can obtain your Access Key by creating a developer account on the Unsplash website and creating a new application. Follow [this guide](https://unsplash.com/documentation#creating-a-developer-account)
+6.  Replace the `REACT_APP_UNSPLASH_ACCESS_KEY` value in the `.env` file with your Unsplash Access Key. You can obtain your Access Key by creating a developer account on the Unsplash website and creating a new application. Follow [this guide](https://unsplash.com/documentation#creating-a-developer-account)
     
 7.  Run the application: `npm run dev`
     
@@ -82,11 +81,15 @@ That's it! You should now be able to use the Splashify app locally.
 
 
 ## Usage
-1. Enter a search term into the search bar
-2. Wait a moment for the results to populate
-3. The search results will be display relevant images from unsplash in a grid view (via masonry)
-4. Hover over an image and select the download button to download the image
-5. Click on any image to view it in full size
+- Navigate to the Splashify website
+- View images in 3 different methods:
+	- Select Trending or New (images) from the drop-down menu in the header (default Trending)
+	- Select a popular search phrase (based on Unsplash) from the list of buttons e.g. Nature and Architecture
+	- Enter a search term in the search bar and wait a moment for the results to populate
+- The relevant images will be fetched from unsplash and displayed in a grid view
+- Hover over an image to view the author, number of likes and to optionally download the image
+- Click on any image to view it in full size and access additional information i.e. username, description, upload date, alt description
+
 
 ## Todo
 - [x] Display popular search phrases from the Unsplash API to give users search ideas.

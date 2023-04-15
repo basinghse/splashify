@@ -30,7 +30,8 @@ const Header: FC<HeaderProps> = ({
 
   const [logoUrl, setLogoUrl] = useState<string>("");
   const [trendingWords, setTrendingWords] = useState<string[]>([]);
-
+  // const client_id: string = process.env.REACT_APP_UNSPLASH_ACCESS_KEY || "";
+  
   // This function fetches a random photo from the Unsplash API to use as the logo.
 
   const fetchLogo = async () => {

@@ -4,7 +4,7 @@ import { useDebounce } from "usehooks-ts"; // Importing useDebounce hook from us
 import Masonry from "react-masonry-css"; // Importing the react-masonry-css package
 import "./styles/index.css"; // Importing the stylesheet
 import axios from "axios"; // Importing Axios library
-import { client_id } from "../config";
+ import { client_id } from "../config";
 
 // Defining the type for Photo object
 
@@ -43,6 +43,7 @@ const App: FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false); // Setting the state for loading spinner
   const observer = useRef<IntersectionObserver | null>(null); // Using useRef hook to create a reference to IntersectionObserver object
   const [clearResults, setClearResults] = useState<boolean>(false); // Setting the state for clearing search results
+  // const client_id: string = process.env.REACT_APP_UNSPLASH_ACCESS_KEY || "";
 
   function shuffleArray(array: any[]) {
     // Defining the shuffleArray function to shuffle an array
