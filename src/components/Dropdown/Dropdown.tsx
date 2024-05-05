@@ -7,50 +7,41 @@ import React, {
 } from "react";
 import Select from "react-select";
 
-// This defines the props that the Dropdown component expects to receive.
-
 interface DropdownProps {
   setInitialSearchQuery: Dispatch<SetStateAction<string>>;
   searchQuery: string;
 }
 
-// These are the options that will be displayed in the dropdown.
-
-const options = [
+const dropdownOptions = [
   { value: "trending&order_by=popular", label: "Trending" },
   { value: "new&sort=latest", label: "New" },
 ];
 
-// This is the actual Dropdown component.
-
-const Dropdown: FC<DropdownProps> = ({
+export const Dropdown: FC<DropdownProps> = ({
   setInitialSearchQuery,
   searchQuery,
 }) => {
   useEffect(() => {
     if (searchQuery === "") {
-      setInitialSearchQuery(options[0].value);
+      setInitialSearchQuery(dropdownOptions[0].value);
     }
   }, [searchQuery, setInitialSearchQuery]);
 
-  // This is the state for the currently selected option in the dropdown.
-  const [selected, setSelected] = useState(options[0]);
+  const [selected, setSelected] = useState(dropdownOptions[0]);
 
   // This is the event handler that will be called when the user selects a new option.
-
   const handleChange = (option: any) => {
     setSelected(option);
     setInitialSearchQuery(option.value);
   };
 
-  // This is the JSX that will be rendered to the DOM.
   return (
     <div className="flex justify-center">
       <div className="relative">
         <Select
           value={selected}
           onChange={handleChange}
-          options={options}
+          options={dropdownOptions}
           components={{
             IndicatorSeparator: () => null,
           }}
@@ -59,5 +50,3 @@ const Dropdown: FC<DropdownProps> = ({
     </div>
   );
 };
-
-export default Dropdown;
