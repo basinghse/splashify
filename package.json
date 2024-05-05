@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "REACT_APP_LOCALHOST=${IS_LOCALHOST:=true} REACT_APP_API_BASE_URL=$API_BASE_URL react-scripts start",
+
+    "run": "npm run dev"
   },
   "dependencies": {
     "axios": "^1.3.4",
