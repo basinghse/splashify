@@ -62,7 +62,10 @@ export const ImageModal: React.FC<ImageModalProps> = ({ photo, onClose }) => {
     <div className="fixed top-0 left-0 bottom-0 right-0 w-full h-full bg-black bg-opacity-75 flex items-center justify-center z-[200]">
       <div className="relative w-full h-screen p-4 bg-gray-50 flex justify-center items-center flex-col overflow-auto">
         <div className="absolute top-2 left-8 text-gray-700 focus:outline-none">
-          <span className="font-bold text-xl">{photo.user.name}</span>
+          <span className="font-bold text-xl">
+            Photo by {photo.user.name} from{" "}
+            <a href="https://unsplash.com/">Unsplash</a>
+          </span>
           <br />
           <span className="ml-1">@{photo.user.username}</span>
         </div>
