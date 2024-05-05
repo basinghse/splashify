@@ -39,9 +39,6 @@ export const App: FC = () => {
   const observer = useRef<IntersectionObserver | null>(null);
   const [clearResults, setClearResults] = useState<boolean>(false);
 
-  const unsplashAccessKey =
-    import.meta.env.VITE_UNSPLASH_ACCESS_KEY || process.env.UNSPLASH_ACCESS_KEY;
-
   function shuffleArray(array: any[]) {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -60,12 +57,16 @@ export const App: FC = () => {
 
         // Fetch portrait-oriented photos
         const portraitResponse = await axios.get(
-          `https://api.unsplash.com/search/photos?query=${query}&orientation=portrait&client_id=${unsplashAccessKey}&per_page=15&page=${page}&height=300`
+          `https://api.unsplash.com/search/photos?query=${query}&orientation=portrait&client_id=${
+            import.meta.env.VITE_UNSPLASH_ACCESS_KEY
+          }&per_page=15&page=${page}&height=300`
         );
 
         // Fetch landscape-oriented photos
         const landscapeResponse = await axios.get(
-          `https://api.unsplash.com/search/photos?query=${query}&orientation=landscape&client_id=${unsplashAccessKey}&per_page=15&page=${page}&height=300`
+          `https://api.unsplash.com/search/photos?query=${query}&orientation=landscape&client_id=${
+            import.meta.env.VITE_UNSPLASH_ACCESS_KEY
+          }&per_page=15&page=${page}&height=300`
         );
 
         // Combine the results from both queries and shuffle the order
