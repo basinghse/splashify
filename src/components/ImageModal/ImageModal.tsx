@@ -1,8 +1,5 @@
 import React from "react";
 import { FaHeart, FaPlus } from "react-icons/fa";
-import { AiOutlineArrowDown } from "react-icons/ai";
-
-// This defines the structure of the photo object that is passed to the component.
 
 type Photo = {
   id: string;
@@ -20,18 +17,13 @@ type Photo = {
   description: string;
 };
 
-// This defines the props that the ImageModal component expects to receive.
-
 type ImageModalProps = {
   photo: Photo;
   onClose: () => void;
 };
 
-// This is the actual ImageModal component.
-
-const ImageModal: React.FC<ImageModalProps> = ({ photo, onClose }) => {
-  // This function formats a date string to a more readable format.
-
+export const ImageModal: React.FC<ImageModalProps> = ({ photo, onClose }) => {
+  // Formats date string to a more readable format.
   function formatDate(dateString: string) {
     const date = new Date(dateString);
     const monthNames = [
@@ -65,8 +57,6 @@ const ImageModal: React.FC<ImageModalProps> = ({ photo, onClose }) => {
 
     return `${month} ${day}${daySuffix}, ${year}`;
   }
-
-  // This is the JSX that will be rendered to the DOM.
 
   return (
     <div className="fixed top-0 left-0 bottom-0 right-0 w-full h-full bg-black bg-opacity-75 flex items-center justify-center z-[200]">
@@ -117,5 +107,3 @@ const ImageModal: React.FC<ImageModalProps> = ({ photo, onClose }) => {
     </div>
   );
 };
-
-export default ImageModal;

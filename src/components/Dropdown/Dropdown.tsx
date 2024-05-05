@@ -1,10 +1,4 @@
-import React, {
-  useState,
-  FC,
-  Dispatch,
-  SetStateAction,
-  useEffect,
-} from "react";
+import { Dispatch, FC, SetStateAction, useEffect, useState } from "react";
 import Select from "react-select";
 
 interface DropdownProps {

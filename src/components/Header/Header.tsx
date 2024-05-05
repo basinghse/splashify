@@ -1,15 +1,8 @@
-import React, {
-  FC,
-  Dispatch,
-  SetStateAction,
-  useState,
-  useEffect,
-} from "react";
 import axios from "axios";
-import { Dropdown } from "../index";
+import { Dispatch, FC, SetStateAction, useEffect, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { RxCross2 } from "react-icons/rx";
-import { client_id } from "../../../config";
+import { Dropdown } from "../index";
 
 interface HeaderProps {
   setSearchQuery: Dispatch<SetStateAction<string>>;

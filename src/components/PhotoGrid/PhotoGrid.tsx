@@ -1,9 +1,7 @@
 import { FC, Fragment } from "react";
-import "../../styles/Image.css";
-import { FaHeart } from "react-icons/fa";
 import { AiOutlineArrowDown } from "react-icons/ai";
-
-// This defines the structure of the photo object that is passed to the component.
+import { FaHeart } from "react-icons/fa";
+import "../../styles/Image.css";
 
 type Photo = {
   id: string;
@@ -21,19 +19,13 @@ type Photo = {
   description: string;
 };
 
-// This defines the props that the PhotoGrid component expects to receive.
-
 type PhotoGridProps = {
   photo: Photo;
   onClick: () => void;
 };
 
-// This is the actual PhotoGrid component.
-
-const PhotoGrid: FC<PhotoGridProps> = ({ photo, onClick }) => {
+export const PhotoGrid: FC<PhotoGridProps> = ({ photo, onClick }) => {
   const { user, urls } = photo;
-
-  // This is the JSX that will be rendered to the DOM.
 
   return (
     <Fragment>
@@ -64,5 +56,3 @@ const PhotoGrid: FC<PhotoGridProps> = ({ photo, onClick }) => {
     </Fragment>
   );
 };
-
-export default PhotoGrid;
