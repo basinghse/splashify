@@ -29,7 +29,9 @@ export const Header: FC<HeaderProps> = ({
   const fetchLogo = async () => {
     try {
       const response = await axios.get(
-        `https://api.unsplash.com/photos/random?client_id=${client_id}`
+        `https://api.unsplash.com/photos/random?client_id=${
+          import.meta.env.VITE_UNSPLASH_ACCESS_KEY
+        }`
       );
       setLogoUrl(response.data.urls.small);
     } catch (error) {
@@ -41,7 +43,9 @@ export const Header: FC<HeaderProps> = ({
   const fetchTrendingWords = async () => {
     try {
       const response = await axios.get(
-        `https://api.unsplash.com/topics/trending?client_id=${client_id}`
+        `https://api.unsplash.com/topics/trending?client_id=${
+          import.meta.env.VITE_UNSPLASH_ACCESS_KEY
+        }`
       );
       const words = response.data.slice(0, 4).map((topic: any) => topic.title);
       setTrendingWords(words);
