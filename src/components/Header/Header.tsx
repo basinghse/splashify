@@ -11,29 +11,21 @@ import { FaSearch } from "react-icons/fa";
 import { RxCross2 } from "react-icons/rx";
 import { client_id } from "../../../config";
 
-// This defines the props that the Header component expects to receive.
-
 interface HeaderProps {
   setSearchQuery: Dispatch<SetStateAction<string>>;
   searchQuery: string;
   setInitialSearchQuery: Dispatch<SetStateAction<string>>;
 }
 
-// This is the actual Header component.
-
-const Header: FC<HeaderProps> = ({
+export const Header: FC<HeaderProps> = ({
   setSearchQuery,
   searchQuery,
   setInitialSearchQuery,
 }) => {
-  // These are the states for the logo URL and the trending words to display.
-
   const [logoUrl, setLogoUrl] = useState<string>("");
   const [trendingWords, setTrendingWords] = useState<string[]>([]);
-  // const client_id: string = process.env.REACT_APP_UNSPLASH_ACCESS_KEY || "";
-  
-  // This function fetches a random photo from the Unsplash API to use as the logo.
 
+  // Fetches a random photo from the Unsplash API to use as the logo
   const fetchLogo = async () => {
     try {
       const response = await axios.get(
@@ -45,8 +37,7 @@ const Header: FC<HeaderProps> = ({
     }
   };
 
-  // This function fetches the current trending topics from the Unsplash API.
-
+  // Fetches the current trending topics from the Unsplash API
   const fetchTrendingWords = async () => {
     try {
       const response = await axios.get(
@@ -59,20 +50,14 @@ const Header: FC<HeaderProps> = ({
     }
   };
 
-  // This useEffect hook runs the fetchLogo and fetchTrendingWords functions on component mount.
-
   useEffect(() => {
     fetchLogo();
     fetchTrendingWords();
   }, []);
 
-  // This function is called when the user clicks on a trending word. It updates the search query state.
-
   const handleTrendingWordClick = (word: string) => {
     setSearchQuery(word);
   };
-
-  // This is the JSX that will be rendered to the DOM.
 
   return (
     <div className="w-full sticky top-0 flex  justify-center items-center p-4 z-[100] bg-white">
@@ -150,5 +135,3 @@ const Header: FC<HeaderProps> = ({
     </div>
   );
 };
-
-export default Header;
