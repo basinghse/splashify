@@ -18,13 +18,14 @@ export const Header: FC<HeaderProps> = ({
   const [logoUrl, setLogoUrl] = useState<string>("");
   const [trendingWords, setTrendingWords] = useState<string[]>([]);
 
+  const unsplashAccessKey =
+    import.meta.env.VITE_UNSPLASH_ACCESS_KEY || process.env.UNSPLASH_ACCESS_KEY;
+
   // Fetches a random photo from the Unsplash API to use as the logo
   const fetchLogo = async () => {
     try {
       const response = await axios.get(
-        `https://api.unsplash.com/photos/random?client_id=${
-          import.meta.env.VITE_UNSPLASH_ACCESS_KEY
-        }`
+        `https://api.unsplash.com/photos/random?client_id=${unsplashAccessKey}`
       );
       setLogoUrl(response.data.urls.small);
     } catch (error) {
@@ -36,9 +37,7 @@ export const Header: FC<HeaderProps> = ({
   const fetchTrendingWords = async () => {
     try {
       const response = await axios.get(
-        `https://api.unsplash.com/topics/trending?client_id=${
-          import.meta.env.VITE_UNSPLASH_ACCESS_KEY
-        }`
+        `https://api.unsplash.com/topics/trending?client_id=${unsplashAccessKey}`
       );
       const words = response.data.slice(0, 4).map((topic: any) => topic.title);
       setTrendingWords(words);
