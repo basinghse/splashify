@@ -46,15 +46,13 @@ Users can enter a search query and the app will fetch and display matching photo
 
 ## Installation
 
-### Production
+### Live App
 
 Please visit the following link to view the live version of this application online:
 
 - [Splashify](https://splashify.vercel.app/)
 
-Please note: API requests are limited to 50 per hour from Unsplash while application is in the process of being approved for Production.
-
-- Due to this, images may not appear if too many requests are made. Please be patient as the application is approved.
+Please note: API requests are limited to 50 per hour from Unsplash. Once the request limit has been hit, new images will not be generated and previously fetched images will be recycled in searches.
 
 ### Local
 
@@ -67,9 +65,8 @@ Please note: API requests are limited to 50 per hour from Unsplash while applica
 
 To run the application locally, follow these steps:
 
-1.  Open your terminal. If you're using VS Code (recommended), you can open the integrated terminal by pressing Ctrl + '
+1.  Open your terminal. If you're using VS Code (recommended), you can open the integrated terminal with `Ctrl + '`
 2.  Confirm that you have Git installed by typing `git --version` in your terminal. If you receive an error or no output, Git is likely not installed, please download from the link above
-
 3.  Clone the Splashify repository using Git: `git clone https://github.com/basinghse/splashify.git (can enter optional-new-name)`
 4.  Navigate to the project directory: `cd (splashify or optional-new-name)`
 5.  Install dependencies: `npm install`
@@ -110,9 +107,10 @@ That's it! You should now be able to use the Splashify app locally.
 - [x] **Challenge:** Displaying trending words from the Unsplash API.
 - **Solution:** Fetched the trending topics using the Unsplash API and displayed them as clickable buttons that update the search query.
 
-- [ ] **Challenge:** When selecting the 'popular searches' buttons - sometimes it won't load the selected search
-- This appears to be due to the API fetching limitation. Once it hits the limit, the site may fluctuate between images it has already published, as it cannot fetch any new images.
-- It also appears that if the popular searches are clicked one after another, sometimes the second button will not change the images, and due to that, the next button selections will produce the images for the previous search e.g. Nature selection - successful; Architecture selection - unsuccessful; Travel selection - will now show Architecture images; Food selection - will now display Travel images; etc. The **solution** to this is to keep interchanging between the different buttons until the images correspond with the correct buttons. I believe this will be resolved with a higher limit on API fetching through Unsplash API Production account.
+## Limitations
 
-- [ ] **Challenge:** New search keys producing some of the same images and/or lack of new images
-- This issue relates to the limit on API requests which is currently at 50 per hour as the Unsplash API Production application is pending. This means that there may be times where the program will be forced to use images previously used as it cannot fetch for new images due to the limitation. This should be resolved when upgraded to Unsplash API Production account.
+Splashify was deemed to be a similar or competing site to [Unsplash](unsplash.com) and as such will no longer be upgraded to a production application. This means that: it's behaviour was deemed to beWhen selecting the 'popular searches' buttons - sometimes thit won't load the selected search
+- API requests will be limited to 50 per hour
+- Upon reaching the API requests limit:
+  - The site may fluctuate between images that have already been published, as it cannot fetch any new images
+  - Selecting a trending topic may not result in any change in imagery or may produce the result from the previous topic selected (1 step behind your selections)
